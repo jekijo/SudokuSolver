@@ -1,3 +1,4 @@
+#This board can be manipulated following the current format, and given that the new board is a valid sudoku board
 board = [
     [7, 8, 0, 4, 0, 0, 1, 2, 0],
     [6, 0, 0, 0, 7, 5, 0, 0, 9],
@@ -66,10 +67,11 @@ def solve(bo):
             bo[row][col] = 0
     return False
 
-
+'''
+You can run these lines to see the before and after given the current board:
 print_board(board)
 print('\n\n\n')
 solve(board)
 print('\n\n\n')
 print_board(board)
-
+'''
