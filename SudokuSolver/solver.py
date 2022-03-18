@@ -15,11 +15,11 @@ board = [
 def print_board(bo):
     for i in range(len(bo)):
         if i % 3 == 0 and i != 0:
-            print('- - - - - - - - - - - - ')
+            print('- - - - - - - - - - - - -')
 
         for j in range(len(bo[0])):
             if j % 3 == 0 and j != 0:
-                print(' | ', end='')
+                print(' |  ', end='')
             if j == 8:
                 print(bo[i][j])
             else:
@@ -67,11 +67,13 @@ def solve(bo):
             bo[row][col] = 0
     return False
 
-'''
-You can run these lines to see the before and after given the current board:
+
+#You can run these lines to see the before and after given the current board:
+print('\n\n\n')
 print_board(board)
 print('\n\n\n')
 solve(board)
 print('\n\n\n')
 print_board(board)
-'''
+print('\n\n\n')
+
