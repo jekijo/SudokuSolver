@@ -3,8 +3,8 @@ import sys
 
 from solver import solve, valid
 
-width = 450
-height = 450
+width = 550
+height = 550
 rows, cols = 9,9
 black = (0,0,0)
 white = (255,255,255)
@@ -29,9 +29,14 @@ class Board:
                     ]
 '''
 def grid():
-    for row in range(rows):
-        for col in range(cols):
-            pygame.draw.rect(screen,black,(row*50, col*50, 50, 50), 1)
+    for i in range(0,10):
+        if (i == 0) or (i % 3 == 0):
+            pygame.draw.line(screen, black, (50+50*i, 50), (50+50*i, 500), 2)
+            pygame.draw.line(screen, black, (50, 50+50*i), (500, 50+50*i), 2)
+        else:
+            pygame.draw.line(screen, black, (50+50*i, 50), (50+50*i, 500), 1)
+            pygame.draw.line(screen, black, (50, 50+50*i), (500, 50+50*i), 1)
+            
 
 def main():
     clock = pygame.time.Clock()
