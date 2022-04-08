@@ -51,7 +51,7 @@ def solve(bo):
         if valid(bo, i, (row, col)):
             bo[row][col] = i
             val = font.render(str(bo[row][col]), True, black)
-            pygame.time.wait(100)
+            pygame.time.wait(200)
             pygame.draw.rect(screen, white, (col*50+55, row*50+55, 40, 40))
             screen.blit(val, ((col+1)*50+20, (row+1)*50+15))
             pygame.display.update()
@@ -59,7 +59,8 @@ def solve(bo):
                 return True
             bo[row][col] = 0
             val = font.render(str(bo[row][col]), True, black)
-            pygame.time.wait(100)
+            pygame.time.wait(200)
+            pygame.draw.rect(screen, white, (col*50+55, row*50+55, 40, 40))
             screen.blit(val, ((col+1)*50+20, (row+1)*50+15))
             pygame.display.update()
     return False
@@ -72,7 +73,6 @@ def main():
         clock.tick(60)
         grid()
         populate(board)
-        pygame.time.wait(100)
         solve(board)
         for event in pygame.event.get():   
             if event.type == pygame.QUIT:
