@@ -7,11 +7,9 @@ height = 550
 rows, cols = 9,9
 black = (0,0,0)
 white = (255,255,255)
-pygame.init()
 screen = pygame.display.set_mode((width, height))
 screen.fill(white)
 pygame.display.set_caption('Sudoku GUI')
-font = pygame.font.SysFont('Times New Roman', 20)
 board = [
         [7, 8, 0, 4, 0, 0, 1, 2, 0],
         [6, 0, 0, 0, 7, 5, 0, 0, 9],
@@ -34,6 +32,7 @@ def grid():
             pygame.draw.line(screen, black, (50, 50+50*i), (500, 50+50*i), 1)
 
 def populate(bo):
+    font = pygame.font.SysFont('Times New Roman', 20)
     for i in range(len(bo[0])):
         for j in range(len(bo[0])):
             if(0<bo[i][j]<10):
@@ -42,6 +41,7 @@ def populate(bo):
     pygame.display.update()
 
 def solve(bo):
+    font = pygame.font.SysFont('Times New Roman', 20)
     find = find_empty(bo)
     if not find:
         return True
@@ -68,6 +68,7 @@ def solve(bo):
             
 
 def main():
+    pygame.init()
     clock = pygame.time.Clock()
     while True:
         clock.tick(60)
